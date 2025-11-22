@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>自己紹介HP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="HP1.css">
+  <!-- jQuery（CDN） -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- 自分のJS -->
+  <script src="HP2.js"></script>
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="inner">
+      <h1 class="site-title">自己紹介</h1>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="#about">自己紹介</a></li>
+          <li><a href="#skills">スキル</a></li>
+          <li><a href="#hobby">趣味</a></li>
+          <li><a href="#contact">連絡先</a></li>
+        </ul>
+      </nav>
+      <button id="themeToggle" class="theme-toggle">🌙 ダークモード</button>
+    </div>
+  </header>
+
+  <!-- メイン -->
+  <main>
+    <!-- 自己紹介 -->
+    <section id="about" class="section">
+      <div class="inner">
+        <h2 class="section-title">自己紹介</h2>
+        <div class="profile">
+          <div class="profile-icon">
+            <div class="avatar-circle">
+              <img src="アイコン.JPG" alt="アイコン画像">
+            </div>
+          </div>
+          <div class="profile-text">
+            <p>はじめまして。Yasudaと申します。</p>
+            <p>
+              動物やハンドメイド、イラストを描くのが好きです。<br>
+              また、データを集めたり、分析したり、コツコツ作業することが好きです。
+            </p>
+            <button class="btn js-toggle-detail">詳しく見る ▼</button>
+            <div class="detail">
+              <p>
+                現在は主に、プログラミングやデータ分析の学習を進めながら、<br>
+                ポートフォリオサイトの作成にも挑戦しています。<br>
+                気分転換でイラストを描いたり、ものづくりをしています。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- スキル（アコーディオン） -->
+    <section id="skills" class="section section-alt">
+      <div class="inner">
+        <h2 class="section-title">スキル</h2>
+        <ul class="skill-list">
+          <li class="accordion-item">
+            <h3 class="accordion-title js-accordion-toggle">プログラミング</h3>
+            <div class="accordion-content">
+              <p>HTML / CSS / JavaScript（jQuery） / Python / R などを勉強中です。</p>
+            </div>
+          </li>
+          <li class="accordion-item">
+            <h3 class="accordion-title js-accordion-toggle">データ分析</h3>
+            <div class="accordion-content">
+              <p>Excelでの集計・グラフ作成、簡単な統計解析の勉強をしています。</p>
+            </div>
+          </li>
+          <li class="accordion-item">
+            <h3 class="accordion-title js-accordion-toggle">その他</h3>
+            <div class="accordion-content">
+              <p>AIの活用（ChatGPT / Gemini / Copilot など）、効率化や自動化について勉強中です。</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 趣味（ものづくり：スライダー＋左右ボタン） -->
+    <section id="hobby" class="section section-alt">
+      <div class="inner">
+        <h2 class="section-title">趣味</h2>
+        <div class="card-grid">
+          <!-- ものづくり -->
+          <article class="card accordion-item">
+            <h3 class="accordion-title js-accordion-toggle">ものづくり</h3>
+            <div class="accordion-content">
+              <p>ハンドメイドやイラストなど、可愛いものをコツコツ作るのが好きです。</p>
+
+              <!-- ▼ 作品スライダー（ここだけで表示・切り替え） -->
+              <div class="work-slider" id="workSlider">
+                <button class="work-nav-btn work-prev" type="button" aria-label="前の作品">◀</button>
+                <figure class="work-slide">
+                  <!-- JSで中身を書き換える -->
+                  <img src="作品1_猫のイラスト.png" alt="作品1：猫のイラスト">
+                  <figcaption>作品1：色鉛筆で描いた猫のイラスト</figcaption>
+                </figure>
+                <button class="work-nav-btn work-next" type="button" aria-label="次の作品">▶</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- パソコンいじり -->
+          <article class="card accordion-item">
+            <h3 class="accordion-title js-accordion-toggle">パソコンいじり</h3>
+            <div class="accordion-content">
+              <p>自作PCや新しいアプリ、サービスを試してみることにワクワクします。</p>
+            </div>
+          </article>
+
+          <!-- 学び -->
+          <article class="card accordion-item">
+            <h3 class="accordion-title js-accordion-toggle">学び</h3>
+            <div class="accordion-content">
+              <p>興味が湧いたことを調べてメモしたり、まとめることが習慣になっています。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 連絡先 -->
+    <section id="contact" class="section section-alt">
+      <div class="inner">
+        <h2 class="section-title">連絡先</h2>
+        <p>お問い合わせは準備中です。</p>
+        <p class="contact-text">
+          必要に応じて、ここにメールアドレスやSNSリンクを掲載予定です。
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ページトップボタン -->
+  <button id="backToTop" class="back-to-top">▲</button>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="inner">
+      <small>&copy; 2025 My HP</small>
+    </div>
+  </footer>
+</body>
+</html>

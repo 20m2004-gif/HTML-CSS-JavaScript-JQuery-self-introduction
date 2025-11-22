@@ -1,0 +1,348 @@
+/* ベース */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Yu Gothic", sans-serif;
+  line-height: 1.7;
+  color: #222;
+  background: #f1f5ff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* レイアウト */
+.inner {
+  max-width: 960px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+/* ヘッダー */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #ffffffcc;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #ddd;
+}
+
+.site-header .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 16px;
+}
+
+.site-title {
+  font-size: 20px;
+  margin: 0;
+}
+
+.site-nav ul {
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+}
+
+.site-nav a {
+  padding: 4px 8px;
+  border-radius: 999px;
+  transition: background 0.2s;
+}
+
+.site-nav a:hover {
+  background: #eee;
+}
+
+/* ダークモードボタン */
+.theme-toggle {
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  background: #fff;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* セクション */
+.section {
+  padding: 48px 0;
+}
+
+.section-alt {
+  background: #ffffff;
+}
+
+.section-title {
+  font-size: 24px;
+  margin-bottom: 24px;
+  border-left: 4px solid #4b9ad9;
+  padding-left: 8px;
+}
+
+/* プロフィール（アイコン＋テキスト） */
+.profile {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.profile-icon {
+  flex: 0 0 140px;
+}
+
+.avatar-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #4b9ad9;
+  background: #fff;
+}
+
+.avatar-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-text {
+  flex: 1;
+  min-width: 240px;
+}
+
+/* ボタン共通 */
+.btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: none;
+  background: #4b9ad9;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* 詳細テキスト（自己紹介の「詳しく見る」） */
+.detail {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #e6f0ff;
+  display: none; /* jQueryで開閉 */
+}
+
+/* スキル */
+.skill-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.skill-list li {
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #d0ddff;
+  background: #f5f8ff;
+}
+
+/* カード（趣味エリア） */
+.card-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #d0ddff;
+  background: #f5f8ff;
+}
+
+/* アコーディオン共通 */
+.accordion-title {
+  font-size: 18px;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accordion-title::after {
+  content: "▼";
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.accordion-title.is-open::after {
+  content: "▲";
+}
+
+.accordion-content {
+  display: none;  /* 最初は閉じた状態 */
+  margin-top: 8px;
+}
+
+/* ▼ 作品スライダー */
+.work-slider {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.work-nav-btn {
+  border: none;
+  background: #4b9ad9;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.work-nav-btn:hover {
+  opacity: 0.9;
+}
+
+.work-slide {
+  margin: 0;
+  max-width: 320px;
+  width: 100%;
+  text-align: center;
+}
+
+.work-slide img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.work-slide figcaption {
+  font-size: 13px;
+  margin-top: 4px;
+  color: #555;
+}
+
+/* 連絡先 */
+.contact-text {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #fff7d6;
+  border: 1px solid #e5cf8f;
+}
+
+/* ページトップボタン */
+.back-to-top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #4b9ad9;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: none; /* jQueryで表示/非表示 */
+}
+
+/* フッター */
+.site-footer {
+  padding: 16px 0 24px;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+
+/* ダークモード用 */
+body.is-dark {
+  background: #121212;
+  color: #f5f5f5;
+}
+
+body.is-dark .site-header {
+  background: #1f1f1fcc;
+  border-bottom-color: #333;
+}
+
+body.is-dark .section-alt {
+  background: #1f1f1f;
+}
+
+body.is-dark .skill-list li,
+body.is-dark .card,
+body.is-dark .contact-text {
+  background: #1f1f1f;
+  border-color: #444;
+}
+
+body.is-dark .avatar-circle {
+  background: #1f1f1f;
+  border-color: #555;
+}
+
+body.is-dark .detail {
+  background: #1b2735;
+}
+
+body.is-dark .theme-toggle {
+  background: #1f1f1f;
+  color: #f5f5f5;
+  border-color: #444;
+}
+
+body.is-dark .back-to-top {
+  background: #347bb4;
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+  .site-header .inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-nav ul {
+    flex-wrap: wrap;
+  }
+
+  .work-slider {
+    gap: 8px;
+  }
+
+  .work-slide {
+    max-width: 100%;
+  }
+}
